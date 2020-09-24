@@ -15,6 +15,10 @@ export class ProductListComponent {
   }
 
   onNotify(){
+    this.showAlertWindow();
+  }
+
+  showAlertWindow(){
     window.alert('You will!');
   }
 }
