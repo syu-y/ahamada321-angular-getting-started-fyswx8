@@ -1,16 +1,16 @@
 <h2>Products</h2>
 
-<div *ngFor="let product of products">
+<div *ngFor="let product of products; let productId = index;">
   <h3>
-    <a [title]="product.name + 'の詳細を見る'">
+    <a [title]="product.name + 'の詳細を見る'" [routerLink]="['/products', productId]">
     {{product.name}}
+    {{productId}}
     </a>
   </h3>
   <p *ngIf="product.description">詳細：{{product.description}}</p>
   <button (click)="share()">ボタン</button>
   <!-- <app-alert [product]="product"></app-alert> -->
   <app-alert [product]="product" (notify)="onNotify()"></app-alert>
-  <a [routerLink]="['/detail']">あああ</a>
 </div>
 <!-- 
 Copyright Google LLC. All Rights Reserved.
